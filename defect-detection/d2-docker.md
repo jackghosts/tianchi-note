@@ -9,7 +9,7 @@ Ubuntu系统下：
     $ sudo apt install docker.io
 ```
 ## 2.开通阿里云容器服务
-阿里云容器镜像服务 https://www.aliyun.com/product/acr?
+进入阿里云容器镜像服务 https://www.aliyun.com/product/acr?
 先创建命名空间，再创建镜像仓库
 创建好后使用公网地址进行build与push操作
 
@@ -17,7 +17,7 @@ Ubuntu系统下：
 可直接拉取天池构建好的镜像：
 `docker pull registry.cn-shanghai.aliyuncs.com/tcc-public/python:3`
 #### 1.准备配置文件
-创建`Dockerfile`文件：
+进入项目代码所在文件夹，创建`Dockerfile`文件：
 `touch Dockerfile`
 `Dockerfile`内容如下：
 ```
