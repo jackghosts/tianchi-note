@@ -27,16 +27,16 @@ Ubuntu系统下：
 `Dockerfile`内容如下：
 ```
     # Base Images
-    \#\# 从天池基础镜像构建
+    ## 从天池基础镜像构建
     FROM registry.cn-shanghai.aliyuncs.com/tcc-public/python:3
 
-    \#\# 把当前文件夹里的文件构建到镜像的根目录下
+    ## 把当前文件夹里的文件构建到镜像的根目录下
     ADD . /
 
-    \#\# 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）
+    ## 指定默认工作目录为根目录（需要把run.sh和生成的结果文件都放在该文件夹下，提交后才能运行）
     WORKDIR /
 
-    \#\# 镜像启动后统一执行 sh run.sh
+    ## 镜像启动后统一执行 sh run.sh
     CMD ["sh", "run.sh"]
 ```
 run.sh包含启动镜像后进行的操作，用于测试镜像时内容可为`python`，用于提交结果时将内容改为`python detect.py`
@@ -62,6 +62,12 @@ docker基本操作：<br>
     pip install opencv-python
     pip install matplotlib
     pip install scipy
+```
+运行容器后可能会在加载cv2时报错，解决方法如下：
+```
+	apt update
+	apt install libgl1-mesa-glx
+	apt-get install -y libglib2.0-0
 ```
 
 保存容器：<br>
